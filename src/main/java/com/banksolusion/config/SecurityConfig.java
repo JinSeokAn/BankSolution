@@ -31,7 +31,16 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(
                         requests -> requests
-                                .requestMatchers("/login", "/register")
+                                .requestMatchers(
+                                        "/login"
+                                        , "/register"
+                                        , "/admin/dist/**"
+                                        , "/admin/plugins/**"
+                                        , "/mall/css/**"
+                                        , "/mall/js/**"
+                                        , "/mall/image/**"
+                                        , "/mall/styles/**"
+                                )
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()
