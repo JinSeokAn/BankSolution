@@ -34,12 +34,8 @@ public class SecurityConfig {
                                 .requestMatchers(
                                         "/login"
                                         , "/register"
-                                        , "/admin/dist/**"
-                                        , "/admin/plugins/**"
-                                        , "/mall/css/**"
-                                        , "/mall/js/**"
-                                        , "/mall/image/**"
-                                        , "/mall/styles/**"
+                                        , "/css/**"
+                                        , "/js/**"
                                 )
                                 .permitAll()
                                 .anyRequest()
