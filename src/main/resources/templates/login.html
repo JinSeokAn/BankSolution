@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <div th:replace="fragment/header :: header"></div>
+</head>
+<body>
+<h2>로그인</h2>
+<div class="container">
+
+    <form class="form-switch" th:action="@{/logins}" method="post">
+
+        <div class="mb-3 mt-3">
+            <label for="email" class="form-label">이메일:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">비밀번호:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+        </div>
+        <div class="form-check mb-3">
+            <label>
+                <input type="radio" class="form-check-label" name="status" value="admin"> Admin
+            </label>
+            <label>
+                <input type="radio" class="form-check-label" name="status" value="user"> User
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">로그인</button>
+        <p>계정이 없으신가요? <a th:href="@{/register}">가입신청</a></p>
+    </form>
+</div>
+</body>
+</html>
